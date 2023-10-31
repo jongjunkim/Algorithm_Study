@@ -2,7 +2,7 @@ class Solution:
     def lastStoneWeight(self, stones: List[int]) -> int:
         
 
-        stones = [-s for s in stones] #add negative so that the largetest number become smallest number
+        stones = [-s for s in stones] #negate all weight values in-place
         heapq.heapify(stones)
 
         while(len(stones)) > 1:
