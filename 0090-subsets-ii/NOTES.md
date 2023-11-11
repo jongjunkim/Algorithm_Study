@@ -36,7 +36,7 @@ class Solution:
 * output: [[4,4,4,1,4],[4,4,4,1],[4,4,4,4],[4,4,4],[4,4,1,4],[4,4,1],[4,4],[4,1,4],[4,1],[4],[1,4],[1],[]]
 * expected: [[],[1],[1,4],[1,4,4],[1,4,4,4],[1,4,4,4,4],[4],[4,4],[4,4,4],[4,4,4,4]]
 
-# duplicate results with different order
+* duplicate results with different order
 
 # key point
 * sort the list first. If the previous value and currrent value are same -> continue
