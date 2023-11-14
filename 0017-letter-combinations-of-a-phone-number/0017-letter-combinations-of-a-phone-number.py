@@ -18,6 +18,8 @@ class Solution(object):
 
             for c in hashmap[digits[index]]:
                 dfs(index+1, curletter + c)
+            #여기 for loop에서 일단은 index에 해당하는 digits이 돌아가고 그것이 첫번쨰 loop가 된다. 그리고 나서 다음 recurisve하면 다음 index에 있는 
+            #letter들이 뒤에 붙어진다
 
         if digits:
             dfs(0, "")
