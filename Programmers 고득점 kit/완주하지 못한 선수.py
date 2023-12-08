@@ -10,3 +10,15 @@ def solution(participant, completion):
     for person, count in complete.items():
         if count > 0:
             return person
+
+
+#Note
+from collections import Counter
+
+def solution(participant, completion):
+    
+    x1 = Counter(participant)
+    x2 = Counter(completion)
+    
+    result = x1 - x2
+    return list(result.keys())[0]
