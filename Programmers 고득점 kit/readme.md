@@ -58,3 +58,44 @@ def solution(scoville, K):
 ```Python
 sorted_numbers = sorted(map(str, numbers), key=lambda x: x * 3, reverse=True)
 ```
+
+# Map function
+
+The `map` function applies a given function to each element of an iterable (such as a list or tuple) and returns the results.
+
+```python
+# Example
+numbers = [1, 2, 3, 4, 5]
+squared = map(lambda x: x**2, numbers)
+print(list(squared))  # Output: [1, 4, 9, 16, 25]
+```
+
+
+# Permutation
+
+```Python
+from itertools import permutations
+
+letters = ['A', 'B', 'C']
+perms = permutations(letters, 2)
+print(list(perms))  # Output: [('A', 'B'), ('A', 'C'), ('B', 'A'), ('B', 'C'), ('C', 'A'), ('C', 'B')]
+```
+
+# Combination
+```python
+from itertools import combinations
+
+letters = ['A', 'B', 'C']
+combs = combinations(letters, 2)
+print(list(combs))  # Output: [('A', 'B'), ('A', 'C'), ('B', 'C')]
+```
+
+# Set update
+
+```python
+set1 = {1, 2, 3}
+iterable = {3, 4, 5}
+
+set1.update(iterable)
+print(set1)  # Output: {1, 2, 3, 4, 5}
+```
