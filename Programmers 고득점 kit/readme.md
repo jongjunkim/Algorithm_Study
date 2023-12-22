@@ -7,6 +7,9 @@ To sort a hashmap by its values in reverse order, you can use the `sorted` funct
 ```python
 hashmap = {'A': 100, 'B': 200, 'C': 150}
 sorted_hashmap = sorted(hashmap.items(), key=lambda x: x[1], reverse=True)
+
+#만약 lambda 2개의 x값을 이용해서 하려면
+sorted_hashmap = sorted(hashmap.items(), key=lambda x: (x[1], x[0]), reverse=True)
 ```
 
 # Heap
