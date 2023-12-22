@@ -25,3 +25,6 @@ def is_prime(number):
         if number % i == 0:
             return False
     return True
+
+#Permutation 을 몰랐음
+#setupdate도 몰랐음
