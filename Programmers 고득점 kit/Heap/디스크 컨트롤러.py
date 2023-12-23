@@ -1,25 +1,27 @@
 import heapq
 
 def solution(jobs):
+    
+    jobs.sort()
+    total = len(jobs)
+    candidate = []
+    currentTime = 0
     answer = 0
-    total_jobs = len(jobs)
-    jobs.sort()  # 요청 시점을 기준으로 작업을 정렬
-
-    heap = []  # 최소 힙
-    current_time = 0  # 현재까지 처리한 작업 시간
-
-    while jobs or heap:
-        # 현재 시간까지 요청된 작업을 힙에 추가
-        while jobs and jobs[0][0] <= current_time:
-            job_time, request_time = jobs.pop(0)
-            heapq.heappush(heap, (job_time, request_time))
-
-        if heap:
-            job_time, request_time = heapq.heappop(heap)
-            current_time += request_time
-            answer += current_time - job_time
+    
+    while jobs or candidate:
+        while jobs and jobs[0][0] <= currentTime:
+            time, delay = jobs.pop()
+            heapq.heappush(candidate, (delay, time))
+        
+        if candidate:
+            delay, time = heapq.heappop(candidate) 
+            currentTime += delay
+            answer += currentTime - time
         else:
-            # 힙이 비어있을 때는 작업이 들어온 순서대로 처리
-            current_time = jobs[0][0]
+            currentTime = jobs[0][0]
+            
+    return answer // total
 
-    return answer // total_jobs  # 소수점 이하 버림
+# 내가 놓쳤던거  heapq.heappush(candidate, (delay, time)) 이부분을  heapq.heappush(candidate, (time, delay)) 이렇게 했었는데 
+# 이렇게 해버리면 heappush를 할때 time을 기준으로 해서 push가 되니 절대로 delay시간이 작은 순서대로 push가 안됨 
+# 따라서 delay를 앞에 넣고 time을 넣는거
