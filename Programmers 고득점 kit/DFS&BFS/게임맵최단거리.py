@@ -9,7 +9,7 @@
     if maps[row-2][col-1] == 0 and maps[row-1][col-2] == 0:
         return -1
  
-    def dfs(i,j,temp):
+    def dfs(i,j,temp)
         nonlocal res    
         if i == row-1 and j == col-1:
             res = min(res, temp)    
@@ -27,10 +27,7 @@
     dfs(0,0,0)
     return res
   
-
-
-
-
+# DFS
 #이렇게 했을 경우 답은 맞지만 효율성은 떨어짐
 def solution(maps):
     
@@ -59,6 +56,39 @@ def solution(maps):
         return min(one, two, three, four)
     
     result = dfs(0,0,1)
+
+
+ # BFS
+
+#막혀있는 구간이 있기때문에 여기서 visited을 이용해서 (i,j)값들을 저장하지 않으면
+#무한으로 q가 돌아간다.
+
+#그리고 안에 count를 넣어서 지나왔던 칸의 개수들을 저장한다. (이건 꽤유용)
+#deque에서 값들을 저장할때 맨처음 q= deque([ ])인데 set값을 넣으니까 q = deque([(0,0,1)]) 이렇게 되는거고
+#q.append할때는 q.append((i,j,count+1)) 이렇게 ( ) 만을 이용해서 해준다
     
-    return result if result != float("inf") else -1
+from collections import deque
+
+def solution(maps):
+    
+    q = deque([(0,0,1)])
+    row, col = len(maps), len(maps[0])
+    visited = set()
+    directions = [ [0,1], [1,0], [-1,0], [0,-1]]
+    
+    while q: 
+        x,y,count = q.popleft()
+        if x == row-1 and y == col-1:
+            return count
+        for dx,dy in directions:
+            i = x + dx
+            j = y + dy
+            if i in range(row) and j in range(col) and maps[i][j] == 1 and (i,j) not in visited:
+                q.append((i,j,count+1))
+                visited.add((i,j))
+        
+    return -1
+
+   
+  
 
