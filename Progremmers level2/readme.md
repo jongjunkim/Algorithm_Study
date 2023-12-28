@@ -47,4 +47,11 @@ r = '-'.join(a)
 print(r)
 #a-b-c-d-1-2-3
 ```
+# 좌우 공백 제거
+``` python
+S=input()
+#' asdf asdf '
 
+print(S.strip())
+#asdf asdf
+```
