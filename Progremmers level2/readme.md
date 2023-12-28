@@ -70,4 +70,22 @@ print(i, bin(i), oct(i), hex(i)) # 십진수, 이진수, 8진수, 16진수를 �
 
 Bit를 숫자로 바꾸는거는 int('1001', 2) 하면 1001을 2진법을 이용해서 숫자로 바꿔준다
 
+# Dynamic Programming 
+
+```python
+def solution(n):
+    
+    if n <= 1:
+        return n
+    
+    dp = [0] * (n+1)
+    dp[1] = 1
+    
+    for i in range(2,n+1):
+        dp[i] = dp[i-1] + dp[i-2]
+     
+    return dp[n] % 1234567
+```
+
+
 
