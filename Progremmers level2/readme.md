@@ -55,3 +55,19 @@ S=input()
 print(S.strip())
 #asdf asdf
 ```
+
+# Bit Manipulation
+>>> for i in range(20):
+print(i, bin(i), oct(i), hex(i)) # 십진수, 이진수, 8진수, 16진수를 출력
+
+0 0b0 0o0 0x0
+1 0b1 0o1 0x1
+2 0b10 0o2 0x2
+3 0b11 0o3 0x3
+4 0b100 0o4 0x4
+...........
+앞에 0b 와 0o 0x는 몇진수인지 나타내는거 그래서 순수히 숫자만 가져오고싶으면 bin(i)[2:] 하면됨
+
+Bit를 숫자로 바꾸는거는 int('1001', 2) 하면 1001을 2진법을 이용해서 숫자로 바꿔준다
+
+
