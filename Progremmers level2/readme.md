@@ -70,6 +70,18 @@ print(i, bin(i), oct(i), hex(i)) # 십진수, 이진수, 8진수, 16진수를 �
 
 Bit를 숫자로 바꾸는거는 int('1001', 2) 하면 1001을 2진법을 이용해서 숫자로 바꿔준다
 
+# 소수 판별
+
+
+```python
+def is_prime(num):
+    for i in range(2, int(math.sqrt(num))+1):  #for i in range(2, num) 했을경우 시간초과 그래서 이걸 사용
+        if num % i == 0:
+            return False
+    
+    return True
+```
+
 # Dynamic Programming 
 
 ```python
