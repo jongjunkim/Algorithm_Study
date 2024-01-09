@@ -98,6 +98,9 @@ def solution(n):
      
     return dp[n] % 1234567
 ```
-
+# Sort
+   book_time_int = sorted(book_time_int, key = lambda x:x[0])
+   book_time_int.sort() 
+   같은 sort이지만 정렬된 sort 값이 다르게 나온다
 
 
