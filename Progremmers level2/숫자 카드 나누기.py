@@ -6,6 +6,9 @@ def findGCD(array):
         GCD = math.gcd(GCD, array[i])
     return GCD
 
+#맨처음 GCD가 0이고 array[i]가 10이라고 가정할때 GCD = math.gcd(GCD, array[i]) 값은 10이 들어온다 즉 math.gcd(0,10)은 10이 들어옴
+#따라서 그뒤에 만약 5가 array[i]값으로 들어오면 math.gcd(5,10)은 5가 되는거다
+
 def divisible(array, divide):
     
     for num in array:
