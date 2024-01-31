@@ -1,4 +1,20 @@
+# 풀이
+board = input()
 
+board = board.replace("XXXX", "AAAA")
+board = board.replace("XX", "BB")
+
+if 'X' in board:
+    print(-1)
+    
+else:
+    print(board)
+
+#파이썬에서 replace는 문자 왼쪽열 부터 해당하는 문자열을 찾아서 치환해주는 함수
+# XXXX가 오면 AAAA로 해주고 XX면 BB로 치환
+
+
+#내 정답
 def solution(word):
     res = ""
     count = 0
